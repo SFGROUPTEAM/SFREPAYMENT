@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SFRepayMent:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SFRepayMent.war">
+      <element id="artifact" artifact-name="SFRepayMent:war exploded" />
+    </root>
+  </artifact>
+</component>

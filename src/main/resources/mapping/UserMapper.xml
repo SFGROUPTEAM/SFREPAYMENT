@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sf.dao.UserDao">
+
+
+    <resultMap type="com.sf.model.User" id="userResult"/>
+
+    <select id="selectUserById" parameterType="java.lang.String" resultMap="userResult">
+        SELECT * FROM t_user
+        WHERE id = #{userId}
+    </select>
+
+    <select id="selectUserByPhoneOrEmail" resultMap="userResult">
+        SELECT * FROM t_user
+        WHERE user_email = #{emailOrPhone} OR user_phone = #{emailOrPhone}
+        AND user_state = #{state}
+    </select>
+
+    <select id="selectAllUser" resultMap="userResult">
+        SELECT t.id,t.user_name userName,t.user_phone userPhone,t.user_email userEmail,t.user_pwd userPwd ,t.pwd_salt  pwdSalt FROM t_user t
+    </select>
+
+</mapper>
