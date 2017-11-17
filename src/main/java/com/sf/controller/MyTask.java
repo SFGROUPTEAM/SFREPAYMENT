@@ -12,5 +12,6 @@ public class MyTask {
     @Scheduled(cron="0/5 * * * * ? ") //间隔5秒执行
     public void taskCycle(){
         System.out.println("cron"+ new Date());
+        System.out.println("定时任务启动中");
     }
 }
